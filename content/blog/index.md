@@ -1,3 +1,9 @@
+---
+title: Tối ưu query INNER JOIN gây "row explosion" → chuyển sang `WHERE EXISTS` + `NOT EXISTS`
+description: Khi bạn chỉ cần kiểm tra tồn tại (có bản ghi tương ứng ở bảng kia hay không), không nên dùng `INNER JOIN` vì nó dễ làm nở số dòng trung gian → phải `DISTINCT` → tạo temporary table → chậm. Hãy đổi sang `WHERE EXISTS` (semi-join) và `NOT EXISTS` (anti-join).
+date: 2025-10-03
+---
+
 # 🛠️ Tối ưu query: INNER JOIN gây "row explosion" → chuyển sang `WHERE EXISTS` + `NOT EXISTS`
 
 > **Bài học cốt lõi:** Khi bạn **chỉ cần kiểm tra tồn tại** (có bản ghi tương ứng ở bảng kia hay không), **không nên dùng `INNER JOIN`** vì nó dễ làm **nở số dòng trung gian** → phải `DISTINCT` → tạo **temporary table** → chậm. Hãy **đổi sang `WHERE EXISTS`** (semi-join) và **`NOT EXISTS`** (anti-join).

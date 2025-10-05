@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const { data: blogs } = await useAsyncData('blogs', () => 
+const { data: blogs } = await useAsyncData("blogs", () =>
   queryCollectionNavigation("blog")
-)
+);
 
 useSeoMeta({
   title: "Home Page",
-  description: "This is my home page"
-})
-
+  description: "This is my home page",
+});
 </script>
 
 <template>

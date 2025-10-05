@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   vite: { server: { hmr: { host: "3000" } } },
   css: ["~/assets/css/main.css"],
   fonts: {
-    provider: "google",
+    provider: "local",
+    families: [{ name: "Sansation", provider: "local" }],
   },
   ui: {
     fonts: true,

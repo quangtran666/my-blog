@@ -10,5 +10,15 @@ export default defineNuxtConfig({
   ui: {
     fonts: true,
   },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: "github-dark",
+          langs: ["sql", "ts", "php"],
+        },
+      },
+    },
+  },
   modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/content", "@nuxt/fonts"],
 });
